@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <style>
+        #outer {
+            background-color: #55bfd9;
+            width: 60%;
+            height: 595px;
+            margin: auto;
+            padding-top: 3%;
+        }
+
+        #inner {
+            background-color: #fefefe;
+            width: 50%;
+            height: 500px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: system-ui;
+            margin: auto;
+        }
+
+            #inner input {
+                outline: none;
+                border-top: 0px;
+                border-right: 0px;
+                border-left: 0px;
+                width: 80%;
+                border-color: #b8b8b8;
+                font-family: system-ui;
+            }
+
+            #inner h1 {
+                padding-top: 10%;
+            }
+
+        #name {
+            padding-top: 10%;
+            padding-bottom: 1%;
+        }
+
+        #email {
+            padding-top: 10%;
+            padding-bottom: 1%;
+        }
+
+        #message {
+            padding-top: 10%;
+            padding-bottom: 20%
+        }
+
+        #btn {
+            background-color: #08677d;
+            color: #f2ffff;
+            border-radius: 5px;
+            font-family: system-ui;
+            width: 35%;
+            height: 7%;
+            outline: none;
+            border: 0px;
+            margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <h1>Contact Us</h1>
+            <input type="text" id="name" placeholder="Name" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="text" id="message" placeholder="Message" />
+            <button id="btn">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
