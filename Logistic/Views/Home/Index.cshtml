@@ -2,10 +2,41 @@
     ViewBag.Title = "Home Page";
 }
 
-    <div style="padding-top:100px;">
-        <h1>Index Page</h1>
-    </div>
-@section Index{
-    <h1>Hello I am from Index Section</h1>
-    }
+<div style="padding-top:100px;">
+    <h1></h1>
+</div>
 
+@section Index{
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="height:527px">
+            <div class="carousel-item active">
+                <img src="~/Images/Home/Home1.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Home2.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Home3.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Home4.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Home5.jfif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Home6.jfif" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <h1>Hey I am from Index Section</h1>
+
+}
