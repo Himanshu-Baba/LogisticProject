@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+}
+
+<h2>Signup</h2>
+@section Signup{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <style>
+            body {
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-image: url('../../Images/Home/SignupImg.jpg');
+            }
+
+            .login-container {
+                max-width: 450px;
+                margin: auto;
+                margin-top: 50px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                height: 550px;
+            }
+
+            .divider:after,
+            .divider:before {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: #eee;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="login-container">
+                <h2 class="text-center">Signup</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="UserName">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email Address">Email Address</label>
+                        <input type="email" class="form-control" id="password" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Email/Phone Number</label>
+                        <input type="password" class="form-control" id="password" placeholder="Email/Phone Number">
+                    </div>
+                    <button type="button" class="btn btn-primary" style="background-color: green" id="generate-otp">Generate OTP</button>
+                    <br />
+                    <br />
+                    <input type="text" class="form-control" id="phone" placeholder="Enter OTP">
+
+                    <a href="#!" style="color: green;padding-left:70%">validate otp</a>
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
+}

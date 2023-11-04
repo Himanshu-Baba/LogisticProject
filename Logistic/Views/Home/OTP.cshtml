@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "OTP";
+}
+
+<h2>OTP</h2>
+@section OTP{
+    <!DOCTYPE html>
+    <!-- Coding By CodingNepal - codingnepalweb.com -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OTP Verification Form</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Boxicons CSS -->
+        @*<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />*@
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", sans-serif;
+            }
+
+            body {
+                min-height: 100vh;
+                /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                background-repeat:no-repeat;
+                background-size:contain;
+                background-image: url('../../Images/Home/OTPimg.jpg');
+            }
+
+            .container header {
+                height: 65px;
+                width: 65px;
+                background: #4070f4;
+                color: #fff;
+                font-size: 2.5rem;
+                border-radius: 50%;
+            }
+
+            .container h6 {
+                font-size: 1.7rem;
+                color: #008952;
+                margin-left: 120px;
+                margin-bottom: 10px;
+            }
+
+            form .input-field {
+                flex-direction: row;
+                column-gap: 10px;
+            }
+
+            .input-field input {
+                margin-left: 10px;
+                height: 50px;
+                width: 47px;
+                border-radius: 6px;
+                outline: none;
+                font-size: 1.125rem;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+
+
+                .input-field input:focus {
+                    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+                }
+
+                .input-field input::-webkit-inner-spin-button,
+                .input-field input::-webkit-outer-spin-button {
+                    display: none;
+                }
+
+
+            #button {
+                padding-top: 25px;
+                padding-bottom: 25px;
+                border-radius: 10px;
+                border-color: #a97a93;
+                background-color: #b1c0c7;
+                color: #b12323;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: x-large;
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+                padding-left: 70px;
+                padding-right: 70px;
+            }
+
+            #button1 {
+                padding-top: 25px;
+                padding-bottom: 25px;
+                border-radius: 10px;
+                border-color: #a97a93;
+                background-color: blue;
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: x-large;
+                margin-top: 10px;
+                margin-left: 65px;
+                margin-right: 40px;
+                display: flex;
+                align-items: center;
+                padding-left: 65px;
+                padding-right: 65px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <b><h6>Enter OTP </h6></b>
+            <br />
+            <form action="#">
+                <div class="input-field">
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                </div>
+            </form>
+            <div id="OTP">
+                <button style="margin-left:20px;" id="button" type="submit">VERIFY WITH OTP</button>
+                <br />
+                <button id="button1" type="submit" class="btn btn-primary btn-block">LOGIN</button>
+            </div>
+        </div>
+
+    </body>
+</html>
+}

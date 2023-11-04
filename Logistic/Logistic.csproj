@@ -154,6 +154,9 @@
     <Content Include="Images\Home\Home4.jfif" />
     <Content Include="Images\Home\Home5.jfif" />
     <Content Include="Images\Home\Home6.jfif" />
+    <Content Include="Images\Home\LoginImg.jpg" />
+    <Content Include="Images\Home\OTPimg.jpg" />
+    <Content Include="Images\Home\SignupImg.jpg" />
     <Content Include="Images\house.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -183,6 +186,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Signup.cshtml" />
+    <Content Include="Views\Home\OTP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
