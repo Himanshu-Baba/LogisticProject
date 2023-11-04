@@ -148,6 +148,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Home\Home1.jfif" />
+    <Content Include="Images\Home\Home2.jfif" />
+    <Content Include="Images\Home\Home3.jfif" />
+    <Content Include="Images\Home\Home4.jfif" />
+    <Content Include="Images\Home\Home5.jfif" />
+    <Content Include="Images\Home\Home6.jfif" />
     <Content Include="Images\house.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
