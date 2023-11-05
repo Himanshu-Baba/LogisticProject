@@ -26,7 +26,7 @@
                 background-color: #fff;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                height: 500px;
+                height: 580px;
             }
             .required::after {
                 content: ' *';
@@ -56,16 +56,10 @@
                         <input type="password" class="form-control" id="CreatePassword" placeholder="Enter Your Password">
                     </div>
                     <div class="form-group">
-                        <label for="Password">Password*</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="Email Address">Conform Password*</label>
-                        <input type="email" class="form-control" id="password" placeholder="Conform Password">
-                    </div>               
-                    
+                        <label class="required" for="ConfirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Enter Your Confirm Password">
+                    </div>                                   
                     <button type="submit" class="btn btn-primary btn-block">Register</button>
-
                 </form>
                 <h6 class="text-center">Already have an account? <a href="/Home/Login">Login</a></h6>
             </div>
