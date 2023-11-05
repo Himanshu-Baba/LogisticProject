@@ -19,13 +19,14 @@
             }
 
             .login-container {
-                max-width: 450px;
+                max-width: 451px;
                 margin: auto;
                 margin-top: 35px;
                 padding: 20px;
                 background-color: #fff;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                height: 550px;
             }
             .required::after {
                 content: ' *';
@@ -55,10 +56,19 @@
                         <input type="password" class="form-control" id="CreatePassword" placeholder="Enter Your Password">
                     </div>
                     <div class="form-group">
-                        <label class="required" for="ConfirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Enter Your Confirm Password">
+                        <label for="Password">Email/Phone Number</label>
+                        <input type="password" class="form-control" id="password" placeholder="Email/Phone Number">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                    <button type="button" class="btn btn-primary" style="background-color: green" id="generate-otp">Generate OTP</button>
+                    <br />
+                    <br />
+                    <input type="text" class="form-control" id="phone" placeholder="Enter OTP">
+
+                    <a href="#!" style="color: green;padding-left:70%">validate otp</a>
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+
                 </form>
                 <h6 class="text-center">Already have an account? <a href="/Home/Login">Login</a></h6>
             </div>
