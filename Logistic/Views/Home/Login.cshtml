@@ -7,66 +7,72 @@
 @section Login{
     <!DOCTYPE html>
     <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Login</title>
-            <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <style>
 
-                body {
-                    background-image: url('../../Images/Home/LoginImg.jpg');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
+            body {
+                background-image: url('../../Images/Home/LoginImg.jpg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
 
-                .login-container {
-                    max-width: 400px;
-                    margin: 0 auto;
-                    margin-top: 100px;
-                    padding: 20px;
-                    border-radius: 5px;
-                    height: 400px;
-                    color: #060101;
-                }
+            .login-container {
+                max-width: 400px;
+                margin: 0 auto;
+                margin-top: 100px;
+                padding: 20px;
+                border-radius: 5px;
+                height: 400px;
+                color: #060101;
+            }
 
-                .divider:after,
-                .divider:before {
-                    content: "";
-                    flex: 1;
-                    height: 1px;
-                    background: #eee;
-                }
+            .divider:after,
+            .divider:before {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: #eee;
+            }
 
-                #or {
-                    margin-top: -50px;
-                }
+            #or {
+                margin-top: -50px;
+            }
 
-                .text-muted {
-                    color: #060101 !important;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="container" style="padding-bottom:50px">
-                <div class="login-container bg-white">
-                    <h2 class="text-center">Login</h2>
+            .text-muted {
+                color: #060101 !important;
+            }
 
+            .required::after {
+                content: ' *';
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" style="padding-bottom:50px">
+            <div class="login-container bg-white">
+                <form>
+                    <h2 class="text-center"><b>Login</b></h2>
                     <div class="form-group">
-                        <label for="username">Email</label>
-                        <input type="email" class="form-control" style="color:white;" id="username" name="Email" placeholder="Enter your Email Address">
+                        <label class="required" for="Email/Contact">Email/Contact</label>
+                        <input type="text" class="form-control" id="Email/Contact" name="Email/Contact" placeholder="Enter Your Email or Contact Number">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" style="color:white;" class="form-control" id="password" name="password" placeholder="Enter your password">
+                        <label class="required" for="Password">Password</label>
+                        <input type="Password" class="form-control" id="Password" name="Password" placeholder="Enter Your Password">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Generate OTP To Login</button>
-                        <div id="forgotpwd"> <a class="small text-muted" href="#!">Forgot password?</a></div>
-                        <p class="mb-5 pb-lg-2" style="color: #060101;">
-                            Don't have an account? <a href="/Home/Signup">Register here</a>
-                        </p>
-                </div>
+                    <p class="text-center"><a href="#">Forgot password?</a></p>
+                    <p class="text-center">
+                        Don't have an account? <a href="/Home/Signup">Register here</a>
+                    </p>
+                </form>
             </div>
-        </body>
+        </div>
+    </body>
 </html>
 }
 
