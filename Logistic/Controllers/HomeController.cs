@@ -50,5 +50,6 @@ namespace Logistic.Controllers
 
             return View();
         }
+       
     }
 }
