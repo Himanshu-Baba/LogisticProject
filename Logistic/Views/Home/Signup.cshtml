@@ -19,14 +19,14 @@
             }
 
             .login-container {
-                max-width: 450px;
+                max-width: 451px;
                 margin: auto;
                 margin-top: 50px;
                 padding: 20px;
                 background-color: #fff;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                height: 550px;
+                height: 500px;
             }
 
             .divider:after,
@@ -52,17 +52,14 @@
                         <input type="email" class="form-control" id="password" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <label for="Password">Email/Phone Number</label>
-                        <input type="password" class="form-control" id="password" placeholder="Email/Phone Number">
+                        <label for="Password">Password*</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
-                    <button type="button" class="btn btn-primary" style="background-color: green" id="generate-otp">Generate OTP</button>
-                    <br />
-                    <br />
-                    <input type="text" class="form-control" id="phone" placeholder="Enter OTP">
-
-                    <a href="#!" style="color: green;padding-left:70%">validate otp</a>
-                    <br />
-                    <br />
+                    <div class="form-group">
+                        <label for="Email Address">Conform Password*</label>
+                        <input type="email" class="form-control" id="password" placeholder="Conform Password">
+                    </div>               
+                    
                     <button type="submit" class="btn btn-primary btn-block">Register</button>
 
                 </form>
