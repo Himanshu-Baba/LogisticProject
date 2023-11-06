@@ -210,6 +210,24 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccountManagement\AccountManagement.csproj">
+      <Project>{ff74d7f3-0666-478f-8c3e-b6eddd81a1d1}</Project>
+      <Name>AccountManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseAccessLayer\DataBaseAccessLayer.csproj">
+      <Project>{2421355d-fb5e-4997-8f23-7b12a985a031}</Project>
+      <Name>DataBaseAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailHelper\EmailHelper.csproj">
+      <Project>{9f58706c-b21c-461a-8b05-d2682715549b}</Project>
+      <Name>EmailHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSHelper\SMSHelper.csproj">
+      <Project>{edcd8d69-c7ea-4239-bd4d-219fd876a3c7}</Project>
+      <Name>SMSHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
