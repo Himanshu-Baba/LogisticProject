@@ -52,14 +52,20 @@ namespace Logistic.Controllers
         }
         public ActionResult ForgotPassword()
         {
-            ViewBag.Message = "Your  ForgotPassword page.";
+            ViewBag.Message = "Your ForgotPassword page.";
 
             return View();
         }
 
         public ActionResult ConfirmPassword()
         {
-            ViewBag.Message = "Your  ConfirmPassword page.";
+            ViewBag.Message = "Your ConfirmPassword page.";
+
+            return View();
+        }
+        public ActionResult Enquiry()
+        {
+            ViewBag.Message = "Your Enquiry page.";
 
             return View();
         }

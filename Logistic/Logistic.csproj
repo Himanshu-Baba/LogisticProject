@@ -191,6 +191,7 @@
     <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Home\ConfirmPassword.cshtml" />
+    <Content Include="Views\Home\Enquiry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
