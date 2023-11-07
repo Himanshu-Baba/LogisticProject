@@ -82,7 +82,9 @@ namespace Logistic.Controllers
             EnquiryTypeDropDownDB oEnquiryTypeDropDownDB = new EnquiryTypeDropDownDB();
             EnquiryModel obj = new EnquiryModel();
             obj.EnquiryTypeList = oEnquiryTypeDropDownDB.GetEnquiryType();
-            return View(obj);
+
+            ViewBag.StateList = new SelectList(oEnquiryTypeDropDownDB.GetState(), "StateId", "State");
+            return View();
         }
         [HttpPost]
         public ActionResult Enquiry(EnquiryModel data)
@@ -92,5 +94,15 @@ namespace Logistic.Controllers
             oEnquiryDB.Enquiry(data);
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult GetCityList(int StateID)
+        {
+            EnquiryTypeDropDownDB oEnquiryTypeDropDownDB = new EnquiryTypeDropDownDB();
+            List<CityModel> selectList = oEnquiryTypeDropDownDB.GetCity().Where(x => x.StateId == StateID).ToList();
+            ViewBag.Citylist = new SelectList(selectList, "CityId", "City");
+            return PartialView("P_DisplayCities");
+        }
+
     }
 }

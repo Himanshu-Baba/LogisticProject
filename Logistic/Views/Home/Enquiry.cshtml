@@ -8,6 +8,7 @@
     <h1></h1>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <style>
     body {
         background-image: url('../../Images/Home/Home5.jfif');
@@ -60,24 +61,27 @@
             </div>
             <div class="col-md-3">
                 <label for="Enquiry" class="form-label required">Enquiry Type</label>
-                @Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), new { @class = "form-control form-select" })
+                @*@Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), new { @class = "form-control form-select" })*@
             </div>
             <div class="col-md-3">
                 <label for="validationCustom08" class="form-label">State</label>
-                <select class="form-select" id="validationCustom08" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Madhya Pradesh</option>
-                </select>
+                @*<select class="form-select" id="validationCustom08" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Madhya Pradesh</option>
+                    </select>*@
+
+                @Html.DropDownListFor(m => m.StateId, ViewBag.StateList as SelectList, "--Select State--", new { @class = "form-control" })
                 <div class="invalid-feedback">
                     Please select a valid State.
                 </div>
             </div>
             <div class="col-md-3">
                 <label for="validationCustom09" class="form-label">City</label>
-                <select class="form-select" id="validationCustom09" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Bhopal</option>
-                </select>
+                @*<select class="form-select" id="validationCustom09" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Bhopal</option>
+                    </select>*@
+                @Html.DropDownListFor(m => m.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
                 <div class="invalid-feedback">
                     Please select a valid City.
                 </div>
@@ -117,6 +121,37 @@
             </div>
         </form>
     </div>
+
+
+
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('#CityId').attr('disabled', 'disabled');
+            debugger
+            $("#StateId").change(function () {
+                var stateId = $(this).val();
+                debugger
+                $.ajax({
+                    type: "post",
+                    url: "/Home/GetCityList?StateID=" + stateId,
+                    contenttype: "html",
+                    success: function (response) {
+                        debugger
+                        $('#CityId').removeAttr('disabled');
+                        $("#CityId").empty();
+                        $("#CityId").append(response);
+
+                    }
+                })
+            })
+
+        })
+    </script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
@@ -138,14 +173,19 @@
                     }, false)
                 })
         })()
-        // message //
-        $('#validationCustom07').keyup(function () {
-            var characterCount = $(this).val().length,
-                current_count = $('#current_count'),
-                maximum_count = $('#maximum_count'),
-                count = $('#count');
-            current_count.text(characterCount);
-        });
+    // message //
+    $('#validationCustom07').keyup(function () {
+        var characterCount = $(this).val().length,
+            current_count = $('#current_count'),
+            maximum_count = $('#maximum_count'),
+            count = $('#count');
+        current_count.text(characterCount);
+    });
+
+
+
+
+
     </script>
     <br />
 }

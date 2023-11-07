@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CityModel.cs" />
     <Compile Include="Model\ContactUsModel.cs" />
     <Compile Include="Model\EnquiryModel.cs" />
+    <Compile Include="Model\StateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ContactUsDB.cs" />
     <Compile Include="Repository\EnquiryDB.cs" />
