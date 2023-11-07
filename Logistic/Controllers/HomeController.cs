@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataBaseAccessLayer.Repository;
+using DataBaseAccessLayer.Model;
 
 namespace Logistic.Controllers
 {
@@ -31,6 +35,14 @@ namespace Logistic.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(ContactUsModel model)
+        {
+            ViewBag.Message = "Your contact page.";
+            ContactUsDB oInsertContactUs = new ContactUsDB();
+            oInsertContactUs.ContactUs(model);
+            return RedirectToAction("Index");
         }
         public ActionResult Signup()
         {
@@ -63,13 +75,22 @@ namespace Logistic.Controllers
 
             return View();
         }
+        [HttpGet]
         public ActionResult Enquiry()
         {
             ViewBag.Message = "Your Enquiry page.";
-
-            return View();
+            EnquiryTypeDropDownDB oEnquiryTypeDropDownDB = new EnquiryTypeDropDownDB();
+            EnquiryModel obj = new EnquiryModel();
+            obj.EnquiryTypeList = oEnquiryTypeDropDownDB.GetEnquiryType();
+            return View(obj);
         }
-
-
+        [HttpPost]
+        public ActionResult Enquiry(EnquiryModel data)
+        {
+            ViewBag.Message = "Your Enquiry page.";
+            EnquiryDB oEnquiryDB = new EnquiryDB();
+            oEnquiryDB.Enquiry(data);
+            return RedirectToAction("Index");
+        }
     }
 }
