@@ -14,8 +14,8 @@ namespace DataBaseAccessLayer.Model
         public long? Enquiry_Phone { get; set; }
         public string Enquiry_Organization { get; set; }
         public string Enquiry_Type { get; set; }
-        public int StateId { get; set; }
-        public int CityId { get; set; }
+        public string StateId { get; set; }
+        public string CityId { get; set; }
         public long? Enquiry_Zip { get; set; }
         public string Enquiry_Address { get; set; }
         public string Enquiry_Quiery { get; set; }
