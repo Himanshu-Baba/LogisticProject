@@ -60,28 +60,22 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="Enquiry" class="form-label required">Enquiry Type</label>
-                @*@Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), new { @class = "form-control form-select" })*@
+                <label for="validationCustom08" class="form-label required">Enquiry Type</label>
+                @Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), "--Select--", new { @class = "form-control form-select", @id = "validationCustom08", @required = "required" })
+                <div class="invalid-feedback">
+                    Please select a valid Type.
+                </div>
             </div>
             <div class="col-md-3">
-                <label for="validationCustom08" class="form-label">State</label>
-                @*<select class="form-select" id="validationCustom08" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Madhya Pradesh</option>
-                    </select>*@
-
-                @Html.DropDownListFor(m => m.StateId, ViewBag.StateList as SelectList, "--Select State--", new { @class = "form-control" })
+                <label for="validationCustom09" class="form-label required">State</label>
+                @Html.DropDownListFor(Model => Model.StateId, ViewBag.StateList as SelectList, "--Select State--", new { @class = "form-control" })
                 <div class="invalid-feedback">
                     Please select a valid State.
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="validationCustom09" class="form-label">City</label>
-                @*<select class="form-select" id="validationCustom09" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Bhopal</option>
-                    </select>*@
-                @Html.DropDownListFor(m => m.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
+                <label for="validationCustom10" class="form-label required">City</label>
+                @Html.DropDownListFor(Model => Model.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
                 <div class="invalid-feedback">
                     Please select a valid City.
                 </div>
@@ -121,15 +115,10 @@
             </div>
         </form>
     </div>
-
-
-
-    
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script>
+    <script type="text/javascript">
 
-
-
+        // state-city //
         $(document).ready(function () {
             $('#CityId').attr('disabled', 'disabled');
             debugger
@@ -145,14 +134,15 @@
                         $('#CityId').removeAttr('disabled');
                         $("#CityId").empty();
                         $("#CityId").append(response);
-
                     }
                 })
             })
-
         })
+
     </script>
-    <script>
+    
+    <script type="text/javascript">
+
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict'
@@ -173,18 +163,16 @@
                     }, false)
                 })
         })()
-    // message //
-    $('#validationCustom07').keyup(function () {
-        var characterCount = $(this).val().length,
-            current_count = $('#current_count'),
-            maximum_count = $('#maximum_count'),
-            count = $('#count');
-        current_count.text(characterCount);
-    });
 
+        // message //
 
-
-
+        $('#validationCustom07').keyup(function () {
+            var characterCount = $(this).val().length,
+                current_count = $('#current_count'),
+                maximum_count = $('#maximum_count'),
+                count = $('#count');
+            current_count.text(characterCount);
+        });
 
     </script>
     <br />
