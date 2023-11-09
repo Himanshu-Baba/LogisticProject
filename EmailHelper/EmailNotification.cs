@@ -19,7 +19,7 @@ namespace EmailHelper
 
             var email = new MimeMessage();
 
-            email.From.Add(new MailboxAddress("BridgeWayLogistic", "BridgeWayLogistic@gmail.com"));
+            email.From.Add(new MailboxAddress("BridgeWayLogistic", "bridgewaylogistics23@gmail.com"));
             email.To.Add(new MailboxAddress(Contact_Name, Contact_Email));
 
             email.Subject = "BridgeWayLogistic";
@@ -32,7 +32,7 @@ namespace EmailHelper
                 smtp.Connect("smtp.gmail.com", 587, false);
 
                 // Note: only needed if the SMTP server requires authentication
-                smtp.Authenticate("himanshugupta2308@gmail.com", "gqtw ffez flrc rnoj");
+                smtp.Authenticate("bridgewaylogistics23@gmail.com", "yxun vxph rjee qyqa");
 
                 smtp.Send(email);
                 smtp.Disconnect(true);
