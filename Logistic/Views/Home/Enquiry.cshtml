@@ -68,14 +68,14 @@
             </div>
             <div class="col-md-3">
                 <label for="validationCustom09" class="form-label required">State</label>
-                @Html.DropDownListFor(Model => Model.StateId, ViewBag.StateList as SelectList, "--Select State--", new { @class = "form-control" })
+                @Html.DropDownListFor(Model => Model.StateId, ViewBag.StateList as SelectList, "--Select State--", new { @class = "form-control", @required = "required" })
                 <div class="invalid-feedback">
                     Please select a valid State.
                 </div>
             </div>
             <div class="col-md-3">
                 <label for="validationCustom10" class="form-label required">City</label>
-                @Html.DropDownListFor(Model => Model.CityId, new SelectList(""), "--Select City--", new { @class = "form-control" })
+                @Html.DropDownListFor(Model => Model.CityId, new SelectList(""), "--Select City--", new { @class = "form-control", @required = "required" })
                 <div class="invalid-feedback">
                     Please select a valid City.
                 </div>
@@ -124,13 +124,11 @@
             debugger
             $("#StateId").change(function () {
                 var stateId = $(this).val();
-                debugger
                 $.ajax({
                     type: "post",
                     url: "/Home/GetCityList?StateID=" + stateId,
                     contenttype: "html",
                     success: function (response) {
-                        debugger
                         $('#CityId').removeAttr('disabled');
                         $("#CityId").empty();
                         $("#CityId").append(response);

@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using DataBaseAccessLayer.Repository;
 using DataBaseAccessLayer.Model;
+using SMSHelper;
+using EmailHelper;
 
 namespace Logistic.Controllers
 {
@@ -42,6 +44,10 @@ namespace Logistic.Controllers
             ViewBag.Message = "Your contact page.";
             ContactUsDB oInsertContactUs = new ContactUsDB();
             oInsertContactUs.ContactUs(model);
+            SMSNotification oSMSNotification = new SMSNotification();
+            oSMSNotification.SendSMS(model);
+            EmailNotification oEmailNotification = new EmailNotification();
+            oEmailNotification.SendEmail(model);
             return RedirectToAction("Index");
         }
         public ActionResult Signup()
