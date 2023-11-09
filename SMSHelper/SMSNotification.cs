@@ -12,7 +12,7 @@ namespace SMSHelper
 {
     public class SMSNotification
     {
-        public void SendSMS(ContactUsModel data)
+        public void SendSMSContact(ContactUsModel data)
         {
             try
             {
@@ -27,6 +27,30 @@ namespace SMSHelper
 
                 string Contact_Name = data.Contact_Name;
                 messageOptions.Body = "Hello "+ Contact_Name +" Thank you for contacting us, we will get back to you as soon as possible.";
+
+                var message = MessageResource.Create(messageOptions);
+                Console.WriteLine(message.Body);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        public void SendSMSEnquiry(EnquiryModel data)
+        {
+            try
+            {
+                var accountSid = "AC5263205a522408b40e9e42e6406952df";
+                var authToken = "35636e7e5838e8b3204c0665c8547f9a";
+                TwilioClient.Init(accountSid, authToken);
+
+                string Enquiry_Phone = data.Enquiry_Phone.ToString();
+                var messageOptions = new CreateMessageOptions(
+                  new PhoneNumber("+91" + Enquiry_Phone));
+                messageOptions.From = new PhoneNumber("+12029465215");
+
+                string Enquiry_Name = data.Enquiry_Name;
+                messageOptions.Body = "Hello " + Enquiry_Name + " Thank you for your interest in our services, your enquiry has been submitted, we will get back to you as soon as possible.";
 
                 var message = MessageResource.Create(messageOptions);
                 Console.WriteLine(message.Body);

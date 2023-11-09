@@ -45,9 +45,9 @@ namespace Logistic.Controllers
             ContactUsDB oInsertContactUs = new ContactUsDB();
             oInsertContactUs.ContactUs(model);
             SMSNotification oSMSNotification = new SMSNotification();
-            oSMSNotification.SendSMS(model);
+            oSMSNotification.SendSMSContact(model);
             EmailNotification oEmailNotification = new EmailNotification();
-            oEmailNotification.SendEmail(model);
+            oEmailNotification.SendEmailContact(model);
             return RedirectToAction("Index");
         }
         public ActionResult Signup()
@@ -93,11 +93,15 @@ namespace Logistic.Controllers
             return View(obj);
         }
         [HttpPost]
-        public ActionResult Enquiry(EnquiryModel data)
+        public ActionResult Enquiry(EnquiryModel model)
         {
             ViewBag.Message = "Your Enquiry page.";
             EnquiryDB oEnquiryDB = new EnquiryDB();
-            oEnquiryDB.Enquiry(data);
+            oEnquiryDB.Enquiry(model);
+            SMSNotification oSMSNotification = new SMSNotification();
+            oSMSNotification.SendSMSEnquiry(model);
+            EmailNotification oEmailNotification = new EmailNotification();
+            oEmailNotification.SendEmailEnquiry(model);
             return RedirectToAction("Index");
         }
 
