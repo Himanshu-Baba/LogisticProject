@@ -22,8 +22,8 @@ namespace DataBaseAccessLayer.Repository
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Name", data.Contact_Name);
                 cmd.Parameters.AddWithValue("@Email", data.Contact_Email);
-                cmd.Parameters.AddWithValue("@Phone", data.Conatct_Phone);
-                cmd.Parameters.AddWithValue("@Message", data.Conatct_Message);
+                cmd.Parameters.AddWithValue("@Phone", data.Contact_Phone);
+                cmd.Parameters.AddWithValue("@Message", data.Contact_Message);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
             }
