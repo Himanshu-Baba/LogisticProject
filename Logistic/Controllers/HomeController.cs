@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using DataBaseAccessLayer.Repository;
 using DataBaseAccessLayer.Model;
+using SMSHelper;
+using EmailHelper;
 
 namespace Logistic.Controllers
 {
@@ -42,6 +44,10 @@ namespace Logistic.Controllers
             ViewBag.Message = "Your contact page.";
             ContactUsDB oInsertContactUs = new ContactUsDB();
             oInsertContactUs.ContactUs(model);
+            SMSNotification oSMSNotification = new SMSNotification();
+            oSMSNotification.SendSMSContact(model);
+            EmailNotification oEmailNotification = new EmailNotification();
+            oEmailNotification.SendEmailContact(model);
             return RedirectToAction("Index");
         }
         public ActionResult Signup()
@@ -87,11 +93,15 @@ namespace Logistic.Controllers
             return View(obj);
         }
         [HttpPost]
-        public ActionResult Enquiry(EnquiryModel data)
+        public ActionResult Enquiry(EnquiryModel model)
         {
             ViewBag.Message = "Your Enquiry page.";
             EnquiryDB oEnquiryDB = new EnquiryDB();
-            oEnquiryDB.Enquiry(data);
+            oEnquiryDB.Enquiry(model);
+            SMSNotification oSMSNotification = new SMSNotification();
+            oSMSNotification.SendSMSEnquiry(model);
+            EmailNotification oEmailNotification = new EmailNotification();
+            oEmailNotification.SendEmailEnquiry(model);
             return RedirectToAction("Index");
         }
 

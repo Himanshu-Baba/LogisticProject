@@ -11,7 +11,7 @@ namespace DataBaseAccessLayer.Model
         public int Contact_Id { get; set; }
         public string Contact_Name { get; set; }
         public string Contact_Email { get; set; }
-        public long Conatct_Phone { get; set; }
-        public string Conatct_Message { get; set; }
+        public string Contact_Phone { get; set; }
+        public string Contact_Message { get; set; }
     }
 }
