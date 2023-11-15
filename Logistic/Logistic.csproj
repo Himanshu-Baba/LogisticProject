@@ -180,6 +180,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Home\Gift Vocher.jpg" />
+    <Content Include="Images\Home\Gift Vocher1.jpg" />
+    <Content Include="Images\Home\Gift Vocher2.jpg" />
     <Content Include="Images\Home\Home1.jfif" />
     <Content Include="Images\Home\Home2.jfif" />
     <Content Include="Images\Home\Home3.jfif" />
@@ -229,6 +232,7 @@
     <Content Include="Views\Home\ConfirmPassword.cshtml" />
     <Content Include="Views\Home\Enquiry.cshtml" />
     <Content Include="Views\Shared\P_DisplayCities.cshtml" />
+    <Content Include="Views\Home\GetSourceAndDestinationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

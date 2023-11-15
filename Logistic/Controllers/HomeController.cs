@@ -112,6 +112,10 @@ namespace Logistic.Controllers
             ViewBag.Citylist = new SelectList(selectList, "CityId", "City");
             return PartialView("P_DisplayCities");
         }
-
+        public ActionResult GetSourceAndDestinationList()
+        {
+            return View();
+        }
+       
     }
 }
