@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,11 +46,13 @@
     <Compile Include="Model\CityModel.cs" />
     <Compile Include="Model\ContactUsModel.cs" />
     <Compile Include="Model\EnquiryModel.cs" />
+    <Compile Include="Model\SignUpModel.cs" />
     <Compile Include="Model\StateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ContactUsDB.cs" />
     <Compile Include="Repository\EnquiryDB.cs" />
     <Compile Include="Repository\EnquiryTypeDropDownDB.cs" />
+    <Compile Include="Repository\SignUpDB.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

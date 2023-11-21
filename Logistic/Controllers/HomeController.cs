@@ -6,9 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataBaseAccessLayer.Repository;
-using DataBaseAccessLayer.Model;
 using SMSHelper;
 using EmailHelper;
+using DataBaseAccessLayer.Model;
+using System.Web.Security;
 
 namespace Logistic.Controllers
 {
@@ -56,16 +57,55 @@ namespace Logistic.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Signup(SignUpModel osignup)
+        {
+            SignUpDB db = new SignUpDB();
+            bool check = db.GetUser(osignup);
+            if (check == true)
+            {
+                ViewBag.insert = "<script>alert(insertion sucessfully)</script)";
+                ModelState.Clear();
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+        //[Authorize]
+        public ActionResult Wellcome(SignUpModel osignup)
+        {
+            SignUpDB db = new SignUpDB();
+            var obj = db.GetUser().ToList();
+            return View(obj);
+        }
+
         public ActionResult Login()
         {
             ViewBag.Message = "Your login page.";
-
             return View();
         }
+        //[HttpPost]
+        //public ActionResult Login(SignUpModel osignUpModel)
+        //{
+        //    SignUpDB db = new SignUpDB();
+        //    var row = db.GetUser().Where(model => model.userEmail == osignUpModel.userEmail && model.userPassword == model.userPassword);
+        //    if (row != null)
+        //    {
+        //        return RedirectToAction("wellcome");
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Login");
+        //    }
+        //}
+
         public ActionResult OTP()
         {
             ViewBag.Message = "Your otp page.";
-
             return View();
         }
         public ActionResult ForgotPassword()

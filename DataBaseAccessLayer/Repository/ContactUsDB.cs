@@ -15,7 +15,7 @@ namespace DataBaseAccessLayer.Repository
         {
             try
             {
-                string connection = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+                string connection = ConfigurationManager.ConnectionStrings["Hello"].ConnectionString;
                 SqlConnection con = new SqlConnection(connection);
                 con.Open();
                 string query = "InsertContactUs";

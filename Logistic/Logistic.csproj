@@ -223,12 +223,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Signup.cshtml" />
     <Content Include="Views\Home\OTP.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Home\ConfirmPassword.cshtml" />
     <Content Include="Views\Home\Enquiry.cshtml" />
     <Content Include="Views\Shared\P_DisplayCities.cshtml" />
+    <Content Include="Views\Home\Wellcome.cshtml" />
+    <Content Include="Views\Home\Signup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

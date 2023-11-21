@@ -13,7 +13,7 @@ namespace DataBaseAccessLayer.Repository
 {
     public class EnquiryTypeDropDownDB
     {
-        string cs = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string cs = ConfigurationManager.ConnectionStrings["Hello"].ConnectionString;
         public List<string> GetEnquiryType()
         {
             List<string> EnquiryList = new List<string>();

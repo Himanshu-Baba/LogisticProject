@@ -1,82 +1,112 @@
-﻿@{
+﻿@model DataBaseAccessLayer.Model.SignUpModel
+
+@{
     ViewBag.Title = "Signup";
 }
 
 <h2>Signup</h2>
+
+@{
+    ViewBag.Title = "Signup";
+}
+
+
+<h2>Signup</h2>
+@Html.Raw(ViewBag.insert)
+
 @section Signup{
     <!DOCTYPE html>
     <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Signup</title>
-            <style>
-                body {
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-image: url('../../Images/Home/SignupImg.jpg');
-                }
-
-                .login-container {
-                    max-width: 451px;
-                    margin: auto;
-                    margin-top: 65px;
-                    margin-bottom:10px;
-                    padding: 10px;
-                    background-color: #fff;
-                    border-radius: 5px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                    height: 580px;
-                }
-
-                .required::after {
-                    content: ' *';
-                    color: red;
-                }
-            </style>
-            <script>
-                // email validation //
-    function validateemail()
-    {
-        var x = document.myform.Email.value;
-                var atposition=x.indexOf("@@");
-                var dotposition=x.lastIndexOf(".");
-        if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
-                    return false;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <style>
+            body {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('../../Images/Home/SignupImg.jpg');
             }
-            </script>
-        </head>
+
+            .login-container {
+                max-width: 451px;
+                margin: auto;
+                margin-top: 65px;
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                height: 580px;
+            }
+
+            .required::after {
+                content: ' *';
+                color: red;
+            }
+        </style>
+        <script>
+            // email validation //
+            function validateemail() {
+                var x = document.myform.Email.value;
+                var atposition = x.indexOf("@@");
+                var dotposition = x.lastIndexOf(".");
+                if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                    return false;
+                }
+            }
+        </script>
+    </head>
     <body>
-        <div class="container">
-            <div class="login-container" style="border: solid; border-color: #f15a28">
-                <h2 class="text-center"><b>Signup</b></h2>
-                <form name="myform"  method="post" action="/Home/OTP" onsubmit="return validateemail();">
-                    <div class="form-group">
-                        <label class="required" for="UserName">UserName</label>
-                        <input type="text" class="form-control" id="UserName" placeholder="Enter Your UserName">
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="Email">Email</label>
-                        <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="Contact">Contact Number</label>
-                        <input type="number" class="form-control" id="Contact" placeholder="Enter Your Contact Number">
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="CreatePassword">Create Password</label>
-                        <input type="password" class="form-control" id="CreatePassword" placeholder="Enter Your Password">
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="ConfirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Enter Your Confirm Password">
-                    </div>                                   
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
-                </form>
-                <h6 class="text-center">Already have an account? <a href="/Home/Login">Login</a></h6>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="container">
+                <div class="login-container" style="border: solid; border-color: #f15a28">
+                    <h2 class="text-center" style="margin-top: 16px;"><b>Signup</b></h2>
+                    <form name="myform" method="post" action="/Home/Login" onsubmit="return validateemail();">
+                        <div class="form-group">
+                            <label class="required" for="UserName">UserName</label>
+                            @Html.EditorFor(model => model.userName, new { htmlAttributes = new { @class = "form-control", @id = "UserName", @placeholder = "Enter Your UserName", @required = "required" } })
+                            @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="Email">Email</label>
+                            @Html.EditorFor(model => model.userEmail, new { htmlAttributes = new { @class = "form-control", @id = "Email", @name = "Email", @placeholder = "Enter Your Email", @required = "required" } })
+                            @Html.ValidationMessageFor(model => model.userEmail, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="Contact">Contact Number</label>
+                            @Html.EditorFor(model => model.userContact, new { htmlAttributes = new { @class = "form-control", @id = "Contact", @placeholder = "Enter Your Contact Number", @required = "required" } })
+                            @Html.ValidationMessageFor(model => model.userContact, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="CreatePassword">Create Password</label>
+
+                            @Html.EditorFor(model => model.userPassword, new { htmlAttributes = new { @class = "form-control", @id = "CreatePassword", @placeholder = "Enter Your Password", @required = "required" } })
+                            @Html.ValidationMessageFor(model => model.userPassword, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn btn-primary btn-block" />
+                        </div>
+
+                    </form>
+                    <h6 class="text-center">Already have an account? <a href="/Home/Login">Login</a></h6>
+                </div>
             </div>
-        </div>
-    </body>
+
+        }
+
+}
+</body>
+
+
 </html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
