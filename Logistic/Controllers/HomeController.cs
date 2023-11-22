@@ -54,7 +54,6 @@ namespace Logistic.Controllers
         public ActionResult Signup()
         {
             ViewBag.Message = "Your signup page.";
-
             return View();
         }
 
@@ -75,7 +74,7 @@ namespace Logistic.Controllers
             }
 
         }
-        //[Authorize]
+        
         public ActionResult Wellcome(SignUpModel osignup)
         {
             SignUpDB db = new SignUpDB();
@@ -88,21 +87,22 @@ namespace Logistic.Controllers
             ViewBag.Message = "Your login page.";
             return View();
         }
-        //[HttpPost]
-        //public ActionResult Login(SignUpModel osignUpModel)
-        //{
-        //    SignUpDB db = new SignUpDB();
-        //    var row = db.GetUser().Where(model => model.userEmail == osignUpModel.userEmail && model.userPassword == model.userPassword);
-        //    if (row != null)
-        //    {
-        //        return RedirectToAction("wellcome");
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login");
-        //    }
-        //}
-
+        [HttpPost]
+        public ActionResult Login(SignUpModel osignUpModel)
+        {
+            SignUpDB db = new SignUpDB();
+            var row = db.GetUser().Where(model => model.userEmail == osignUpModel.userEmail && model.userPassword == osignUpModel.userPassword).FirstOrDefault();
+            if (row != null)
+            {
+                return RedirectToAction("otp");
+            }
+            else
+            {
+                ViewBag.insertData = "<script>alert('invalid email or password')</script>";
+                ModelState.Clear();
+            }
+            return View();       
+        }
         public ActionResult OTP()
         {
             ViewBag.Message = "Your otp page.";
