@@ -54,14 +54,14 @@
             </div>
             <div class="col-md-6">
                 <label for="Organization" class="form-label required">Organization</label>
-                @Html.TextBoxFor(Model => Model.Enquiry_Organization, new { @class = "form-control", @id = "validationCustom04", @placeholder = "Enter Your Organization", @required = "required" })
+                @Html.TextBoxFor(Model => Model.Enquiry_Organization, new { @class = "form-control", @id = "Organization", @placeholder = "Enter Your Organization", @required = "required", @disabled= "disabled" })
                 <div class="invalid-feedback">
                     Please Enter Your Organization.
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="validationCustom08" class="form-label required">Enquiry Type</label>
-                @Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), "--Select--", new { @class = "form-control form-select", @id = "validationCustom08", @required = "required" })
+                <label for="EnquiryType" class="form-label required">Enquiry Type</label>
+                @Html.DropDownListFor(Model => Model.Enquiry_Type, new SelectList(Model.EnquiryTypeList), "--Select--", new { @class = "form-control form-select", @id = "EnquiryType", @required = "required", @onchange = "enableInput()" })
                 <div class="invalid-feedback">
                     Please select a valid Type.
                 </div>
@@ -115,13 +115,27 @@
             </div>
         </form>
     </div>
+
+    <script type="text/javascript">
+        function enableInput() {
+            var selectedOption = document.getElementById("EnquiryType").value;
+
+            var inputBox = document.getElementById("Organization");
+
+            if (selectedOption === "Business Shipments") {
+                inputBox.disabled = false;
+            } else {
+                inputBox.disabled = true;
+            }
+        }
+    </script>
+
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
 
         // state-city //
         $(document).ready(function () {
             $('#CityId').attr('disabled', 'disabled');
-            debugger
             $("#StateId").change(function () {
                 var stateId = $(this).val();
                 $.ajax({
@@ -138,7 +152,7 @@
         })
 
     </script>
-    
+
     <script type="text/javascript">
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -162,15 +176,15 @@
                 })
         })()
 
-        // message //
+    // message //
 
-        $('#validationCustom07').keyup(function () {
-            var characterCount = $(this).val().length,
-                current_count = $('#current_count'),
-                maximum_count = $('#maximum_count'),
-                count = $('#count');
-            current_count.text(characterCount);
-        });
+    $('#validationCustom07').keyup(function () {
+        var characterCount = $(this).val().length,
+            current_count = $('#current_count'),
+            maximum_count = $('#maximum_count'),
+            count = $('#count');
+        current_count.text(characterCount);
+    });
 
     </script>
     <br />
